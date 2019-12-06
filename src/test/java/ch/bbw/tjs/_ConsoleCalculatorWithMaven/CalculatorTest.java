@@ -18,7 +18,16 @@ public class CalculatorTest {
 		testee = new Calculator();
 		assertTrue(testee.summe(10, 25) == 35);
 	}
-
+	@Test
+	public void testSummeZweiNegativIsOk() {
+		testee = new Calculator();
+		assertTrue(testee.summe(-10, -25) == -35);
+	}
+	@Test
+	public void testSummeEinNegativEinPositivIsOk() {
+		testee = new Calculator();
+		assertTrue(testee.summe(-10, 25) == 15);
+	}
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
 		testee = new Calculator();
