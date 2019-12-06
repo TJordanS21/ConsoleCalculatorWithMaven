@@ -1,7 +1,8 @@
 package ch.bbw.tjs._ConsoleCalculatorWithMaven;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -12,35 +13,32 @@ import org.junit.Test;
  */
 public class CalculatorTest {
 	Calculator testee;
-
+	@Before
+	public void setup() {
+		testee = new Calculator();	
+	}
 	@Test
 	public void testSummeZweiPositiveIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.summe(10, 25) == 35);
 	}
 	@Test
 	public void testSummeZweiNegativIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.summe(-10, -25) == -35);
 	}
 	@Test
 	public void testSummeEinNegativEinPositivIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.summe(-10, 25) == 15);
 	}
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.subtraktion(25, 10) == 15);
 	}
 	@Test
 	public void testSubtractionZweiNegativIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.subtraktion(-25, -10) == -15);
 	}
 	@Test
 	public void testSubtractionEinNegativEinPositivIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.subtraktion(-25, 10) == -35);
 	}
 }
