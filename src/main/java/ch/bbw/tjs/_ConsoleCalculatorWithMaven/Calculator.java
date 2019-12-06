@@ -3,6 +3,7 @@ package ch.bbw.tjs._ConsoleCalculatorWithMaven;
 /***
  * 
  * @author Tyler Jordan Storz
+ * @version 27.12.2019
  *
  */
 public class Calculator {
