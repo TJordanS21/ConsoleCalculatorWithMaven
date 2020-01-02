@@ -13,32 +13,49 @@ import org.junit.Test;
  */
 public class CalculatorTest {
 	Calculator testee;
+
 	@Before
 	public void setup() {
-		testee = new Calculator();	
+		testee = new Calculator();
 	}
+
 	@Test
 	public void testSummeZweiPositiveIsOk() {
 		assertTrue(testee.summe(10, 25) == 35);
 	}
+
 	@Test
 	public void testSummeZweiNegativIsOk() {
 		assertTrue(testee.summe(-10, -25) == -35);
 	}
+
 	@Test
 	public void testSummeEinNegativEinPositivIsOk() {
 		assertTrue(testee.summe(-10, 25) == 15);
 	}
+
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
 		assertTrue(testee.subtraktion(25, 10) == 15);
 	}
+
 	@Test
 	public void testSubtractionZweiNegativIsOk() {
 		assertTrue(testee.subtraktion(-25, -10) == -15);
 	}
+
 	@Test
 	public void testSubtractionEinNegativEinPositivIsOk() {
 		assertTrue(testee.subtraktion(-25, 10) == -35);
+	}
+
+	@Test(expected = ArithmeticException.class)
+	public void testDivisonThroughZeroGivesException() {
+		testee.division(4, 0);
+	}
+
+	@Test
+	public void testDivisonZweiPositivIsOk() throws ArithmeticException {
+		testee.division(6, 2);
 	}
 }

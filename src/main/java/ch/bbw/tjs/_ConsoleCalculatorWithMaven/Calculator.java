@@ -14,4 +14,11 @@ public class Calculator {
 	public int subtraktion(int value1, int value2) {
 		return value1 - value2;
 	}
+
+	public double division(int value1, int value2) {
+		if (value2 == 0) {
+			throw new ArithmeticException();
+		}
+		return value1 / value2;
+	}
 }
