@@ -26,15 +26,15 @@ public class Calculator {
 		return Math.round(value1);
 	}
 
-	public double squareroot(int value1) {
+	protected double squareroot(int value1) {
 		return Math.sqrt(value1);
 	}
 
-	public double verzinsen(double startValue, double zinsRate, int years) {
+	double verzinsen(double startValue, double zinsRate, int years) {
 		return startValue * Math.pow((1 + zinsRate / 100), years);
 	}
 
-	public double entzinsen(double endValue, double zinsRate, int years) {
+	private double entzinsen(double endValue, double zinsRate, int years) {
 		return endValue / Math.pow((1 + zinsRate / 100), years);
 	}
 
