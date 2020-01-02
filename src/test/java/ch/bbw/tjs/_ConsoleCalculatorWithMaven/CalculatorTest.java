@@ -68,4 +68,9 @@ public class CalculatorTest {
 	public void testRoundIsOk() {
 		assertTrue(testee.round(33.234) == 33);
 	}
+
+	@Test
+	public void testVerzinsenIsOk() {
+		assertTrue(testee.verzinsen(1200.0, 4.0, 5.0) == 1459.98);
+	}
 }
