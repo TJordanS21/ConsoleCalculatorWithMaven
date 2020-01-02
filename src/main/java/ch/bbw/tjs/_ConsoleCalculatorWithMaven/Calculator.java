@@ -21,4 +21,8 @@ public class Calculator {
 		}
 		return value1 / value2;
 	}
+
+	public long round(double value1) {
+		return Math.round(value1);
+	}
 }
