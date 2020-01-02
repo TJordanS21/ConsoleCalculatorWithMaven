@@ -109,7 +109,12 @@ public class CalculatorTest {
 
 	@Test
 	public void testDivisonZweiPositivIsOk() throws ArithmeticException {
-		testee.division(6, 2);
+		assertTrue(testee.division(6, 2) == 3);
+	}
+
+	@Test
+	public void testDivisionNegativUndNegativIsOk() {
+		assertTrue(testee.division(-4, -4) == 1);
 	}
 
 	@Test
