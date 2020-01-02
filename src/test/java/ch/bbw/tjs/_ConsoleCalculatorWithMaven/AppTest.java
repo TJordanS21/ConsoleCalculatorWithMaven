@@ -5,7 +5,11 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * Test Class for Class App
+ * 
+ * @author Tyler Jordan Storz
+ * @version 0.0.1
+ * @date 02.01.2020
  */
 public class AppTest 
 {

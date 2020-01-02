@@ -1,7 +1,9 @@
 package ch.bbw.tjs._ConsoleCalculatorWithMaven;
 
-/**
- * Hello world!
+/***
+ * 
+ * @author Tyler Jordan Storz
+ * @version 27.12.2019
  *
  */
 public class App {

@@ -13,6 +13,7 @@ import org.junit.Test;
  * 
  * @author Tyler Jordan Storz
  * @version 0.0.1
+ * @date 02.01.2020
  */
 public class CalculatorTest {
 	Calculator testee;
@@ -20,6 +21,29 @@ public class CalculatorTest {
 	@Before
 	public void setup() {
 		testee = new Calculator();
+	}
+
+	// Test for private Methods
+	@Test
+	public void testEntzinsenIsOk() {
+		try {
+			Method privateStringMethod = Calculator.class.getDeclaredMethod("entzinsen", Double.class, Double.class,
+					Double.class);
+			privateStringMethod.setAccessible(true);
+			double returnValue = (double) privateStringMethod.invoke(testee, 1459.98, 4.0, 5.0);
+			System.out.println(returnValue);
+			assertTrue(returnValue == 1200.0);
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -157,26 +181,4 @@ public class CalculatorTest {
 		assertTrue(testee.verzinsen(1200.0, 4.0, 5.0) == 1459.98);
 	}
 
-	// Test for private Methods
-	@Test
-	public void testEntzinsenIsOk() {
-		try {
-			Method privateStringMethod = Calculator.class.getDeclaredMethod("entzinsen", Double.class, Double.class,
-					Double.class);
-			privateStringMethod.setAccessible(true);
-			double returnValue = (double) privateStringMethod.invoke(testee, 1459.98, 4.0, 5.0);
-			System.out.println(returnValue);
-			assertTrue(returnValue == 1200.0);
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		}
-	}
 }
