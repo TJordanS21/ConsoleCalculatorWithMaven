@@ -16,6 +16,9 @@ public class Calculator {
 	}
 
 	public double division(int value1, int value2) {
+		if (value2 == 0) {
+			throw new ArithmeticException();
+		}
 		return value1 / value2;
 	}
 }
