@@ -25,4 +25,8 @@ public class Calculator {
 	public long round(double value1) {
 		return Math.round(value1);
 	}
+
+	public double squareroot(int value1) {
+		return Math.sqrt(value1);
+	}
 }
