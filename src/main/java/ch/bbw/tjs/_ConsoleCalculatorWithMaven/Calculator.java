@@ -34,7 +34,7 @@ public class Calculator {
 		return Math.round(100 * startValue * Math.pow((1.0 + zinsRate / 100.0), years)) / 100.0;
 	}
 
-	private double entzinsen(double endValue, double zinsRate, double years) {
+	private double entzinsen(Double endValue, Double zinsRate, Double years) {
 		return Math.round(100 * endValue / Math.pow((1.0 + zinsRate / 100.0), years)) / 100.0;
 	}
 
