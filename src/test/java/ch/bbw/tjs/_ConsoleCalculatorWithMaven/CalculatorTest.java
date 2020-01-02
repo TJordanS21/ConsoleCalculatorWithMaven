@@ -121,10 +121,17 @@ public class CalculatorTest {
 	public void testDivisionNegativUndPositivIsOk() {
 		assertTrue(testee.division(-4, 4) == -1);
 	}
+
 	@Test
 	public void testDivisionZeroUndPositivIsOk() {
 		assertTrue(testee.division(0, 4) == 0);
 	}
+
+	@Test
+	public void testDivisionZeroUndNegativIsOk() {
+		assertTrue(testee.division(0, -4) == 0);
+	}
+
 	@Test
 	public void testSquarerootIsOk() {
 		assertTrue(testee.squareroot(4) == 2);
