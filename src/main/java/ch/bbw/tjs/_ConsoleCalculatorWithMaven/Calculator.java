@@ -26,16 +26,16 @@ public class Calculator {
 		return Math.round(value1);
 	}
 
-	public double squareroot(int value1) {
+	protected double squareroot(int value1) {
 		return Math.sqrt(value1);
 	}
 
-	public double verzinsen(double startValue, double zinsRate, int years) {
-		return startValue * Math.pow((1 + zinsRate / 100), years);
+	double verzinsen(double startValue, double zinsRate, double years) {
+		return Math.round(100 * startValue * Math.pow((1.0 + zinsRate / 100.0), years)) / 100.0;
 	}
 
-	public double entzinsen(double endValue, double zinsRate, int years) {
-		return endValue / Math.pow((1 + zinsRate / 100), years);
+	private double entzinsen(Double endValue, Double zinsRate, Double years) {
+		return Math.round(100 * endValue / Math.pow((1.0 + zinsRate / 100.0), years)) / 100.0;
 	}
 
 }
