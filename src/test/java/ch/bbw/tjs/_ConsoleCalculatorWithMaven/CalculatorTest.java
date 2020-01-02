@@ -137,6 +137,11 @@ public class CalculatorTest {
 		assertTrue(testee.division(Integer.MAX_VALUE, 400) == 5368709);
 	}
 
+	@Test(expected = AssertionError.class)
+	public void testDivisionMINUndNegativGivesException() {
+		assertTrue(testee.division(Integer.MIN_VALUE, 400) == 5368709);
+	}
+
 	@Test
 	public void testSquarerootIsOk() {
 		assertTrue(testee.squareroot(4) == 2);
