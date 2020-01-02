@@ -52,6 +52,16 @@ public class CalculatorTest {
 		assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
 	}
 
+	@Test(expected = AssertionError.class)
+	public void testSummeMaxAndMaxGivesException() {
+		assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1200);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSummeMinAndMinGivesException() {
+		assertTrue(testee.summe(Integer.MIN_VALUE, Integer.MIN_VALUE) == 1200);
+	}
+
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
 		assertTrue(testee.subtraktion(25, 10) == 15);
@@ -65,6 +75,31 @@ public class CalculatorTest {
 	@Test
 	public void testSubtractionEinNegativEinPositivIsOk() {
 		assertTrue(testee.subtraktion(-25, 10) == -35);
+	}
+
+	@Test
+	public void testSubtraktionNullEinPositivIsOk() {
+		assertTrue(testee.subtraktion(0, 25) == -25);
+	}
+
+	@Test
+	public void testSubtraktionNullEinNegativIsOk() {
+		assertTrue(testee.subtraktion(0, -25) == 25);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSubtraktionMaxAndMinIsOk() {
+		assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MIN_VALUE) == 1200);
+	}
+
+	@Test
+	public void testSubtraktionMaxAndMaxGivesException() {
+		assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MAX_VALUE) == 0);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSubtraktionMinAndMinGivesException() {
+		assertTrue(testee.subtraktion(Integer.MIN_VALUE, Integer.MIN_VALUE) == 1200);
 	}
 
 	@Test(expected = ArithmeticException.class)
