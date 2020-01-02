@@ -38,6 +38,31 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testSummeNullEinPositivIsOk() {
+		assertTrue(testee.summe(0, 25) == 25);
+	}
+
+	@Test
+	public void testSummeNullEinNegativIsOk() {
+		assertTrue(testee.summe(0, -25) == -25);
+	}
+
+	@Test
+	public void testSummeMaxAndMinIsOk() {
+		assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSummeMaxAndMaxGivesException() {
+		assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1200);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSummeMinAndMinGivesException() {
+		assertTrue(testee.summe(Integer.MIN_VALUE, Integer.MIN_VALUE) == 1200);
+	}
+
+	@Test
 	public void testSubtractionZweiPositiveIsOk() {
 		assertTrue(testee.subtraktion(25, 10) == 15);
 	}
@@ -52,6 +77,31 @@ public class CalculatorTest {
 		assertTrue(testee.subtraktion(-25, 10) == -35);
 	}
 
+	@Test
+	public void testSubtraktionNullEinPositivIsOk() {
+		assertTrue(testee.subtraktion(0, 25) == -25);
+	}
+
+	@Test
+	public void testSubtraktionNullEinNegativIsOk() {
+		assertTrue(testee.subtraktion(0, -25) == 25);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSubtraktionMaxAndMinIsOk() {
+		assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MIN_VALUE) == 1200);
+	}
+
+	@Test
+	public void testSubtraktionMaxAndMaxGivesException() {
+		assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MAX_VALUE) == 0);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testSubtraktionMinAndMinGivesException() {
+		assertTrue(testee.subtraktion(Integer.MIN_VALUE, Integer.MIN_VALUE) == 1200);
+	}
+
 	@Test(expected = ArithmeticException.class)
 	public void testDivisonThroughZeroGivesException() {
 		testee.division(4, 0);
@@ -59,7 +109,37 @@ public class CalculatorTest {
 
 	@Test
 	public void testDivisonZweiPositivIsOk() throws ArithmeticException {
-		testee.division(6, 2);
+		assertTrue(testee.division(6, 2) == 3);
+	}
+
+	@Test
+	public void testDivisionNegativUndNegativIsOk() {
+		assertTrue(testee.division(-4, -4) == 1);
+	}
+
+	@Test
+	public void testDivisionNegativUndPositivIsOk() {
+		assertTrue(testee.division(-4, 4) == -1);
+	}
+
+	@Test
+	public void testDivisionZeroUndPositivIsOk() {
+		assertTrue(testee.division(0, 4) == 0);
+	}
+
+	@Test
+	public void testDivisionZeroUndNegativIsOk() {
+		assertTrue(testee.division(0, -4) == 0);
+	}
+
+	@Test
+	public void testDivisionMAXUndNegativIsOk() {
+		assertTrue(testee.division(Integer.MAX_VALUE, 400) == 5368709);
+	}
+
+	@Test(expected = AssertionError.class)
+	public void testDivisionMINUndNegativGivesException() {
+		assertTrue(testee.division(Integer.MIN_VALUE, 400) == 5368709);
 	}
 
 	@Test
