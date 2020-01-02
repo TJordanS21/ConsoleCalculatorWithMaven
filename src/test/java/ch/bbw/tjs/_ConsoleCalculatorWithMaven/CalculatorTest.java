@@ -63,4 +63,9 @@ public class CalculatorTest {
 	public void testSquarerootIsOk() {
 		assertTrue(testee.squareroot(4) == 2);
 	}
+
+	@Test
+	public void testRoundIsOk() {
+		assertTrue(testee.round(33.234) == 33);
+	}
 }
