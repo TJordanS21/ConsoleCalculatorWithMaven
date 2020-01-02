@@ -29,4 +29,8 @@ public class Calculator {
 	public double squareroot(int value1) {
 		return Math.sqrt(value1);
 	}
+
+	public double verzinsen(double startValue, double zinsRate, int years) {
+		return startValue * Math.pow((1 + zinsRate / 100), years);
+	}
 }
