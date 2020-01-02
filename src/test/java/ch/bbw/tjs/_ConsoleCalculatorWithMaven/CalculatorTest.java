@@ -58,4 +58,9 @@ public class CalculatorTest {
 	public void testDivisonZweiPositivIsOk() throws ArithmeticException {
 		testee.division(6, 2);
 	}
+
+	@Test
+	public void testSquarerootIsOk() {
+		assertTrue(testee.squareroot(4) == 2);
+	}
 }
