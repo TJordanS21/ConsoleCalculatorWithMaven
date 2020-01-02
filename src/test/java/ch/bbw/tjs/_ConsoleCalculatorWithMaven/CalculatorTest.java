@@ -133,6 +133,11 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testDivisionMAXUndNegativIsOk() {
+		assertTrue(testee.division(Integer.MAX_VALUE, 400) == 5368709);
+	}
+
+	@Test
 	public void testSquarerootIsOk() {
 		assertTrue(testee.squareroot(4) == 2);
 	}
