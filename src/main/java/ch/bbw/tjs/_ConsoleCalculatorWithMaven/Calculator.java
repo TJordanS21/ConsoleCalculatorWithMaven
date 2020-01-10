@@ -3,7 +3,7 @@ package ch.bbw.tjs._ConsoleCalculatorWithMaven;
 /***
  * 
  * @author Tyler Jordan Storz
- * @version 27.12.2019
+ * @version 10.01.2020
  *
  */
 public class Calculator {
@@ -31,6 +31,9 @@ public class Calculator {
 	}
 
 	double verzinsen(double startValue, double zinsRate, double years) {
+		if(zinsRate >= 15.0) {
+			throw new WucherzinsException("Ihre Zinsrate " + Double.toString(zinsRate)+ " is too high. Max is 14.9%.");
+		}
 		return Math.round(100 * startValue * Math.pow((1.0 + zinsRate / 100.0), years)) / 100.0;
 	}
 
