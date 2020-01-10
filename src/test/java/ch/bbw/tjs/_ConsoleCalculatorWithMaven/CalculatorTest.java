@@ -13,7 +13,7 @@ import org.junit.Test;
  * 
  * @author Tyler Jordan Storz
  * @version 0.0.1
- * @date 02.01.2020
+ * @date 10.01.2020
  */
 public class CalculatorTest {
 	Calculator testee;
@@ -181,4 +181,8 @@ public class CalculatorTest {
 		assertTrue(testee.verzinsen(1200.0, 4.0, 5.0) == 1459.98);
 	}
 
+	@Test(expected = WucherzinsException.class)
+	public void testVerzinsenZinsCheckError() {
+		assertTrue(testee.verzinsen(100.0, 15.0, 2) == 0.0);
+	}
 }
